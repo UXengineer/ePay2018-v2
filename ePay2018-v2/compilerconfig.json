@@ -1,0 +1,30 @@
+﻿[
+  {
+    "outputFile": "App_Themes/Default/css/custom-theme.css",
+    "inputFile": "App_Themes/Default/css/custom-theme.scss"
+  },
+  {
+    "outputFile": "App_Themes/Default/css/loggedin.css",
+    "inputFile": "App_Themes/Default/css/loggedin.scss"
+  },
+  {
+    "outputFile": "App_Themes/Default/css/loggedout.css",
+    "inputFile": "App_Themes/Default/css/loggedout.scss"
+  },
+  {
+    "outputFile": "Content/labels/float-labels.css",
+    "inputFile": "Content/labels/float-labels.scss"
+  },
+  {
+    "outputFile": "Content/labels/floating.css",
+    "inputFile": "Content/labels/floating.scss"
+  },
+  {
+    "outputFile": "Content/default.css",
+    "inputFile": "Content/default.scss"
+  },
+  {
+    "outputFile": "Content/loggedout.css",
+    "inputFile": "Content/loggedout.scss"
+  }
+]

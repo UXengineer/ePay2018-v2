@@ -142,35 +142,158 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Distributor\Controllers\DashboardController.cs" />
+    <Compile Include="Areas\Distributor\DistributorAreaRegistration.cs" />
+    <Compile Include="Controllers\ConceptsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\PartnerController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Themes\Default\css\custom-theme.css">
+      <DependentUpon>custom-theme.scss</DependentUpon>
+    </Content>
+    <Content Include="App_Themes\Default\css\custom-theme.min.css">
+      <DependentUpon>custom-theme.css</DependentUpon>
+    </Content>
+    <Content Include="App_Themes\Default\css\custom.css" />
+    <Content Include="App_Themes\Default\css\dashboard\dashboard.css" />
+    <Content Include="App_Themes\Default\css\loggedin.css">
+      <DependentUpon>loggedin.scss</DependentUpon>
+    </Content>
+    <Content Include="App_Themes\Default\css\loggedin.min.css">
+      <DependentUpon>loggedin.css</DependentUpon>
+    </Content>
+    <Content Include="App_Themes\Default\css\loggedout.css">
+      <DependentUpon>loggedout.scss</DependentUpon>
+    </Content>
+    <Content Include="App_Themes\Default\css\loggedout.min.css">
+      <DependentUpon>loggedout.css</DependentUpon>
+    </Content>
+    <Content Include="App_Themes\Default\images\android-icon-192x192.png" />
+    <Content Include="App_Themes\Default\images\apple-icon-114x114.png" />
+    <Content Include="App_Themes\Default\images\apple-icon-120x120.png" />
+    <Content Include="App_Themes\Default\images\apple-icon-144x144.png" />
+    <Content Include="App_Themes\Default\images\apple-icon-152x152.png" />
+    <Content Include="App_Themes\Default\images\apple-icon-180x180.png" />
+    <Content Include="App_Themes\Default\images\apple-icon-57x57.png" />
+    <Content Include="App_Themes\Default\images\apple-icon-60x60.png" />
+    <Content Include="App_Themes\Default\images\apple-icon-72x72.png" />
+    <Content Include="App_Themes\Default\images\apple-icon-76x76.png" />
+    <Content Include="App_Themes\Default\images\facebook-share.png" />
+    <Content Include="App_Themes\Default\images\favicon-16x16.png" />
+    <Content Include="App_Themes\Default\images\favicon-32x32.png" />
+    <Content Include="App_Themes\Default\images\favicon-96x96.png" />
+    <Content Include="App_Themes\Default\images\favicon.ico" />
+    <Content Include="App_Themes\Default\images\logo.png" />
+    <Content Include="App_Themes\Default\images\main-logo.png" />
+    <Content Include="App_Themes\Default\images\ms-icon-144x144.png" />
+    <Content Include="App_Themes\Default\images\hero.jpg" />
+    <Content Include="App_Themes\Default\images\twitter-share.png" />
+    <Content Include="App_Themes\Default\images\users\customer-avatar.png" />
+    <Content Include="App_Themes\MaryKay\images\hero.jpg" />
+    <Content Include="App_Themes\MaryKay\images\logo.png" />
+    <Content Include="App_Themes\MaryKay\images\main-logo.png" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\default.css">
+      <DependentUpon>default.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\default.min.css">
+      <DependentUpon>default.css</DependentUpon>
+    </Content>
+    <Content Include="Content\labels\float-labels-ORIGINAL.css" />
+    <Content Include="Content\labels\float-labels.css">
+      <DependentUpon>float-labels.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\labels\float-labels.js" />
+    <Content Include="Content\labels\float-labels.min.css">
+      <DependentUpon>float-labels.css</DependentUpon>
+    </Content>
+    <Content Include="Content\labels\float-labels.min.js" />
+    <Content Include="Content\labels\floating.css">
+      <DependentUpon>floating.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\labels\floating.min.css">
+      <DependentUpon>floating.css</DependentUpon>
+    </Content>
+    <Content Include="Content\loggedout.css">
+      <DependentUpon>loggedout.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\loggedout.min.css">
+      <DependentUpon>loggedout.css</DependentUpon>
+    </Content>
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
+    <Content Include="Images\bank-routing-and-account-numbers.png" />
+    <Content Include="Images\cardbrands\amex.png" />
+    <Content Include="Images\cardbrands\discover.png" />
+    <Content Include="Images\cardbrands\mastercard.png" />
+    <Content Include="Images\cardbrands\visa.png" />
+    <Content Include="Images\debit-mastercard.png" />
+    <Content Include="Images\flags\australia.gif" />
+    <Content Include="Images\flags\brazil.gif" />
+    <Content Include="Images\flags\canada.gif" />
+    <Content Include="Images\flags\china.gif" />
+    <Content Include="Images\flags\france.gif" />
+    <Content Include="Images\flags\french-canadian.gif" />
+    <Content Include="Images\flags\japan.gif" />
+    <Content Include="Images\flags\mexico.gif" />
+    <Content Include="Images\flags\spain.gif" />
+    <Content Include="Images\flags\united-kingdom.gif" />
+    <Content Include="Images\flags\united-states.gif" />
+    <Content Include="Images\flags\unknown-flag.gif" />
+    <Content Include="Images\icon-email.png" />
+    <Content Include="Images\icon-pdf.png" />
+    <Content Include="Images\sprite_inbox.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="App_Themes\Default\css\custom-theme.scss" />
+    <Content Include="App_Themes\Default\css\loggedin.scss" />
+    <Content Include="App_Themes\Default\css\loggedout.scss" />
+    <Content Include="App_Themes\Default\css\fonts\OCRAStd.woff" />
+    <Content Include="App_Themes\Default\images\bank-deposit-validation.psd" />
+    <Content Include="App_Themes\Default\images\facebook-share.psd" />
+    <Content Include="App_Themes\Default\images\main-logo.psd" />
+    <Content Include="App_Themes\Default\images\twitter-share.psd" />
+    <Content Include="App_Themes\MaryKay\images\hero.psd" />
+    <Content Include="Areas\Distributor\Views\web.config" />
+    <Content Include="Areas\Distributor\Views\Dashboard\Index.cshtml" />
+    <None Include="compilerconfig.json" />
+    <None Include="compilerconfig.json.defaults">
+      <DependentUpon>compilerconfig.json</DependentUpon>
+    </None>
+    <Content Include="Content\labels\float-labels.scss" />
+    <Content Include="Content\labels\floating.scss" />
+    <Content Include="Content\default.scss" />
+    <Content Include="fonts\OCRAStd.woff" />
+    <Content Include="Images\bank-routing-and-account-numbers.psd" />
+    <Content Include="Images\debit-mastercard.psd" />
+    <Content Include="Images\flags\country-flags.psd" />
+    <Content Include="Images\cardbrands\card-brands.psd" />
+    <Content Include="Content\loggedout.scss" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\footable.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
-    <None Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\jquery.validate.js" />
-    <Content Include="Scripts\jquery.validate.min.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Scripts\respond.js" />
-    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\jquery.min.js" />
+    <Content Include="Scripts\loggedin.custom.min.js" />
+    <Content Include="Scripts\loggedin\bootstrap.min.css" />
+    <Content Include="Scripts\loggedin\bootstrap.min.js" />
+    <Content Include="Scripts\loggedin\dashboard.min.css" />
+    <Content Include="Scripts\loggedin\loggedin.custom.min.js" />
+    <Content Include="Scripts\navbar-effect.js" />
+    <Content Include="Scripts\NoIndex-jscolor.css" />
+    <Content Include="Scripts\NoIndex-jscolor.js" />
+    <Content Include="Scripts\responsive-table.min.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -179,15 +302,39 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Views\Web.config" />
-    <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Shared\_LayoutLoggedOut.cshtml" />
+    <Content Include="Views\Shared\_AnalyticsBingVerificationTag.cshtml" />
+    <Content Include="Views\Shared\_AnalyticsGoogleTagManager.cshtml" />
+    <Content Include="Views\Shared\_AnalyticsGoogleTagManagerConfirmation.cshtml" />
+    <Content Include="Views\Shared\_AnalyticsGoogleUniversal.cshtml" />
+    <Content Include="Views\Shared\_AnalyticsOutboundLinkTracking.cshtml" />
+    <Content Include="Views\Shared\_CustomerSupportLinks.cshtml" />
+    <Content Include="Views\Shared\_Favicons.cshtml" />
+    <Content Include="Views\Shared\_SocialMediaChannels.cshtml" />
+    <Content Include="Views\Shared\_TopNavbarLoggedOut.cshtml" />
+    <Content Include="Views\Home\NoIndex.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Concepts\Index.cshtml" />
+    <Content Include="Views\Concepts\Labels.cshtml" />
+    <Content Include="Views\Concepts\MoreLabels.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Concepts\Label.cshtml" />
+    <Content Include="Views\Shared\_LayoutLoggedIn.cshtml" />
+    <Content Include="Views\Partner\Index.cshtml" />
+    <Content Include="Views\Login\UnknownDevice.cshtml" />
+    <Content Include="Views\Login\EnterToken.cshtml" />
+    <Content Include="Views\Login\Password.cshtml" />
+    <Content Include="Views\Login\FogotPassword.cshtml" />
+    <Content Include="Views\Login\NewPassword.cshtml" />
+    <Content Include="Views\Login\GetANewToken.cshtml" />
+    <Content Include="Views\Login\TokenError.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="App_Themes\MaryKay\css\" />
+    <Folder Include="App_Themes\MaryKay\js\" />
+    <Folder Include="Areas\Distributor\Models\" />
+    <Folder Include="Areas\Distributor\Views\Shared\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>

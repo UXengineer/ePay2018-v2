@@ -1,0 +1,10 @@
+﻿@* GOOGLE UNIVERSAL TRACKING *@
+<script async src="https://www.googletagmanager.com/gtag/js?id=@ViewBag.GoogleUniversalID"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', '@ViewBag.GoogleUniversalID');
+</script>
+@* /GOOGLE UNIVERSAL TRACKING/ *@

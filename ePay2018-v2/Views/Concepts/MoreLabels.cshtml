@@ -1,0 +1,60 @@
+﻿
+@{
+    Layout = null;
+
+    ViewBag.FirstNameLabel = "First Name";
+    ViewBag.LastNameLabel = "Last Name";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MoreLabels</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="~/Content/labels/float-labels.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <div class="row" style="margin: 20px auto; max-width:450px;">
+            <form class="form-1">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                            <label for="firstnamelabel">@ViewBag.FirstNameLabel</label>
+                            <input type="text" id="firstnamelabel" placeholder="@ViewBag.FirstNameLabel" value="" required />
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                            <label for="lastnamelabel">@ViewBag.LastNameLabel</label>
+                            <input type="text" id="lastnamelabel" placeholder="@ViewBag.LastNameLabel" value="" required />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12">
+                            <label for="commentslabel">Enter some content</label>
+                            <textarea id="commentslabel" placeholder="Comments" rows="4" autocomplete="off" required></textarea>
+                            <label for="select-1">Select an option</label>
+                            <select id="select-1" class="required" required>
+                                <option value="1">Option 1</option>
+                                <option value="2">Option 2</option>
+                                <option value="3">Option 3</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript" src="~/Content/labels/float-labels.js"></script>
+    <script>
+        new FloatLabels('.form-1', {
+            style: 1
+        });
+    </script>
+</body>
+</html>

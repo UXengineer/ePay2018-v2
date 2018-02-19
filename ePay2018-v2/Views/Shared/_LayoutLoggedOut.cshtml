@@ -1,0 +1,181 @@
+﻿<!DOCTYPE html>
+@{
+    ViewBag.Language = "en-us";
+    ViewBag.PartnerGoogleTagManagerID = "GTM-MZ8MRT";
+    ViewBag.GoogleUniversalID = "UA-12739219-14";
+    ViewBag.PartnerBingValidationID = "90F39A1349E577CF8C33173B061B6A01";
+
+    
+    // SOCIAL MEDIA CHANNELS
+    ViewBag.PartnerFacebookChannel = "@PartnerFacebook"; //PARTNER FACEBOOK
+    ViewBag.PartnerTwitterHandle = "@PartnerTwitterHandle"; //PARTNER TWITTER
+    ViewBag.PartnerInstagram = "@PartnerInstagram"; //PARTNER INSTAGRAM
+    ViewBag.PartnerPinterest = "@PartnerPinterest"; //PARTNER PINTEREST
+    ViewBag.PartnerLinkedIn = "@PartnerLinkedIn"; //PARTNER LINKEDIN CHANNEL
+    ViewBag.PartnerYouTubeChannel = "@PartnerYouTubeChannel"; //ADD THE PARTNER'S TWITTER HANDLE
+
+    // FOOTER
+    ViewBag.FooterBackgroundColor = "#242424";
+    ViewBag.LeftColumnHeaderLabel = "About Us";
+    ViewBag.LeftColumnDescriptionLabel = "You need a payment processor you can trust. A partner that can support the vision you have for your bu...";
+    ViewBag.LeftColumnButtonLabel = "more";
+    ViewBag.CenterColumnHeaderLabel = "Terms & Conditions";
+    ViewBag.CenterColumnDescriptionLabel = "Please read our legal agreements as they contain important information about security and privacy requ...";
+    ViewBag.CenterColumnButtonLabel = "more";
+    ViewBag.RightColumnHeaderLabel = "Contact Us";
+    ViewBag.RightColumnDescriptionLabel = "Customer support is available to current customers via phone, email and web chat. Contact us for more...";
+    ViewBag.RightColumnButtonLabel = "more";
+    ViewBag.ConnectAndShareLabel = "Connect &amp; Share";
+    ViewBag.MetaBankDisclosureLabel = "ProPay, Inc. is a registered ISO of Wells Fargo Bank, N.A., Walnut Creek, CA. The ProPay Prepaid MasterCards are issued by MetaBank<sup class='small'>&trade;</sup>, Member FDIC, pursuant to license by MasterCard International Incorporated. MasterCard is a registered trademark of MasterCard International Incorporated.";
+    ViewBag.RightsReservedLabel = "All rights reserved.";
+}
+<html lang="@ViewBag.Language">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    @* HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries *@
+    @* WARNING: Respond.js doesn't work if you view the page via file:// *@
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    @*GENERIC FILES*@
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css" media="all" />
+    @RenderSection("metatags", false)
+    <link rel="stylesheet" href="~/Content/loggedout.min.css" media="all" />
+    <style>
+        footer {
+            background-color:@ViewBag.FooterBackgroundColor;
+        }
+    </style>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+
+    @{ Html.RenderPartial("_Favicons"); } @*PAGE ICONS*@
+    @* ./GENERIC FILES/ *@
+    @*-- *-*-*-*-*-*-* GOOGLE ANALYTICS UNIVERSAL SCRIPT & BING VERIFICATION TAG *-*-*-*-*-*-* -- *@
+    @{
+        <script>
+            dataLayer.push({
+                'pageTitle': '@ViewBag.Title',
+                'event': '@ViewBag.SubmitButtonLabel'
+            });
+        </script>
+        Html.RenderPartial("_AnalyticsGoogleTagManager");
+        Html.RenderPartial("_AnalyticsGoogleUniversal");
+        Html.RenderPartial("_AnalyticsOutboundLinkTracking");
+        Html.RenderPartial("_AnalyticsBingVerificationTag");
+    }
+</head>
+<body>
+    @{
+        Html.RenderPartial("_AnalyticsGoogleTagManagerConfirmation");
+    }
+
+    @RenderBody()
+
+    <footer id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 column">
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 column">
+                        <a href="@Url.Action("About-Us", "Home")" class="footer-links" rel="index,follow" title="@Html.Raw(ViewBag.LeftColumnHeaderLabel)">@Html.Raw(ViewBag.LeftColumnHeaderLabel)</a>
+                        <p class="text-muted f13 pt8">@Html.Raw(ViewBag.LeftColumnDescriptionLabel)</p>
+                        <div class="align-text-right hidden-lg hidden-md hidden-sm">
+                            <a href="@Url.Action("About-Us", "Home")" id="AboutUsButtonLink" class="btn btn-warning btn-sm">@Html.Raw(ViewBag.LeftColumnButtonLabel)<i class="fa fa-chevron-right pl5"></i></a>
+                            <div class="clearfix"></div>
+                            <hr class="color-white" />
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 column">
+                        <a href="@Url.Action("Terms-And-Conditions", "Home")" class="footer-links" rel="follow" title="@Html.Raw(ViewBag.CenterColumnHeaderLabel)">@Html.Raw(ViewBag.CenterColumnHeaderLabel)</a>
+                        <p class="text-muted f13 pt10">@Html.Raw(ViewBag.CenterColumnDescriptionLabel)</p>
+                        <div class="align-text-right hidden-lg hidden-md hidden-sm">
+                            <a href="@Url.Action("Legal-Agreements", "Home")" id="LegalAgreemenUsButtonLink" class="btn btn-warning btn-sm">@Html.Raw(ViewBag.CenterColumnButtonLabel)<i class="fa fa-chevron-right pl5"></i></a>
+                            <div class="clearfix"></div>
+                            <hr class="color-white" />
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 column">
+                        <a href="@Url.Action("Contact-Us", "Home")" class="footer-links" rel="follow" title="@Html.Raw(ViewBag.RightColumnHeaderLabel)">@Html.Raw(ViewBag.RightColumnHeaderLabel)</a>
+                        <p class="text-muted f13 pt8">@Html.Raw(ViewBag.RightColumnDescriptionLabel)</p>
+                        <div class="align-text-right hidden-lg hidden-md hidden-sm">
+                            <a href="@Url.Action("Contact-Us", "Home")" id="ContactUsButtonLink" class="btn btn-warning btn-sm">@Html.Raw(ViewBag.RightColumnButtonLabel)<i class="fa fa-chevron-right pl5"></i></a>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-xs-12 clearfix hidden-lg hidden-md">
+                    <hr />
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column text-center">
+                    <span class="social-sharing">@Html.Raw(ViewBag.ConnectAndShareLabel)</span>
+                    <div class="clearfix hidden-md hidden-sm hidden-xs pt5"></div>
+                    <div class="clearfix hidden-lg hidden-md hidden-sm pt10"></div>
+                    <div class="clearfix hidden-lg hidden-xs">
+                        <hr class="primary" />
+                    </div>
+                    @*@RenderSection("socialLinks", false)*@
+                    <div class="col-lg-12 text-center clearfix">
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 no-padding">
+                            <div class="col-sm-6 col-xs-6"><a href="https://www.facebook.com/@ViewBag.PartnerFacebookChannel" onclick="trackOutboundLink('https://www.facebook.com/@ViewBag.PartnerFacebookChannel'); return false;" title="Share on Facebook" class="social-sharing" target="_blank"><i class="fa fa-2x fa-facebook-square"></i></a></div>
+                            <div class="col-sm-6 col-xs-6"><a href="https://twitter.com/@ViewBag.PartnerTwitterHandle" onclick="trackOutboundLink('https://twitter.com/@ViewBag.PartnerTwitterHandle'); return false;" title="Share on Twitter" class="social-sharing" target="_blank"><i class="fa fa-2x fa-twitter-square"></i></a></div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 no-padding">
+                            <div class="col-sm-6 col-xs-6"><a href="https://www.instagram.com/@ViewBag.PartnerInstagram" onclick="trackOutboundLink('https://www.instagram.com/@ViewBag.PartnerInstagram'); return false;" title="Share on Instagram" rel="index,follow" class="social-sharing" target="_blank"><i class="fa fa-2x fa-instagram"></i></a></div>
+                            <div class="col-sm-6 col-xs-6"><a href="https://www.linkedin.com/company/@ViewBag.PartnerLinkedIn" onclick="trackOutboundLink('https://www.linkedin.com/company/@ViewBag.PartnerLinkedIn'); return false;" title="Share on LinkedIn" rel="index,follow" class="social-sharing" target="_blank"><i class="fa fa-2x fa-linkedin-square"></i></a></div>
+                        </div>
+                        <div class="col-sm-12 col-xs-12 clearfix hidden-lg hidden-md hidden-sm pt8"></div>
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 no-padding">
+                            <div class="col-sm-6 col-xs-6"><a href="https://www.pinterest.com/@ViewBag.PartnerPinterest" onclick="trackOutboundLink('https://www.pinterest.com/@ViewBag.PartnerPinterest'); return false;" title="Share on Pinterest" rel="index,follow" class="social-sharing" target="_blank"><i class="fa fa-2x fa-pinterest-square"></i></a></div>
+                            <div class="col-sm-6 col-xs-6"><a href="https://www.youtube.com/@ViewBag.YouTubeChannel" onclick="trackOutboundLink('https://www.youtube.com/@ViewBag.YouTubeChannel'); return false;" title="Share on YouTube" rel="index,follow" class="social-sharing" target="_blank"><i class="fa fa-2x fa-youtube-square"></i></a></div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 no-padding">
+                            <div class="col-sm-6 col-xs-6"><a href="https://play.google.com/store/apps/details?id=com.propay.mobile" onclick="trackOutboundLink('https://play.google.com/store/apps/details?id=com.propay.mobile'); return false;" title="Download from Google Play" rel="index,follow" class="social-sharing" target="_blank"><i class="fa fa-2x fa-android"></i></a></div>
+                            <div class="col-sm-6 col-xs-6"><a href="https://itunes.apple.com/us/app/propay-accept-credit-cards/id433046878?mt=8" onclick="trackOutboundLink('https://itunes.apple.com/us/app/propay-accept-credit-cards/id433046878?mt=8'); return false;" rel="index,follow" title="Download from Apple Store" class="social-sharing" target="_blank"><i class="fa fa-2x fa-apple"></i></a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr />
+            <div class="col-lg-12 col-md-12 p0">
+                <div class="hidden-sm hidden-xs">
+                    <div class="col-lg-8 col-md-8 align-text-left">
+                        <span class="text-muted f12">@Html.Raw(ViewBag.MetaBankDisclosureLabel)</span>
+                    </div>
+                    <div class="col-lg-4 col-md-4 align-text-right">
+                        <span class="text-muted f12">
+                            &copy Copyright 2015-
+                            <script type="text/javascript">document.write(new Date().getFullYear());</script>&nbsp;
+                            <a href="@ViewBag.PartnerDomainURL" id="ProPayLink" title="@ViewBag.Partner" rel="noindex,follow" target="_blank">@ViewBag.Partner</a>
+                            <br />
+                            @Html.Raw(ViewBag.RightsReservedLabel)
+                        </span>
+                    </div>
+                </div>
+                <div class="hidden-lg hidden-md text-justify">
+                    <div class="col-lg-6 col-md-6 col-xs-12 p0">
+                        <span class="text-muted f11">@Html.Raw(ViewBag.MetaBankDisclosureLabel)</span>
+                        <hr class="primary" />
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-xs-12 text-center">
+                        <span class="text-muted f11">
+                            &copy Copyright 2015-
+                            <script type="text/javascript">document.write(new Date().getFullYear());</script>&nbsp;
+                            <a href="@ViewBag.PartnerDomainURL" id="MobileProPayLink" title="@ViewBag.Partner" rel="noindex,follow" target="_blank">@ViewBag.Partner</a><br class="hidden-sm" />
+                            @Html.Raw(ViewBag.RightsReservedLabel)
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    @RenderSection("scripts", required: false)
+    @RenderSection("pagerequiredscript", required: false)
+
+    <script type="text/javascript" src="~/Scripts/bootstrap.min.js" async></script>
+    <script type="text/javascript" src="~/Scripts/navbar-effect.js"></script>
+</body>
+</html>

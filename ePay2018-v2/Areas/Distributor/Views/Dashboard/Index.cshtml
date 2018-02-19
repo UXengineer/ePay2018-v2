@@ -1,0 +1,718 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_LayoutLoggedIn.cshtml";
+    ViewBag.PageTitle = "Distributor Dashboard";
+    ViewBag.PageDescription = "Review your account and manage your funds by transfering to your bank account and generate reports.";
+
+    //CUSTOM PAGE HEADERS
+    ViewBag.PageHeader = "This is the Page Header";
+    ViewBag.PageSubHeader = "Page Sub-header";
+    ViewBag.PanelName = "Panel Name";
+    ViewBag.PanelNameExplanation = "This is the Panel Name description and complementary explanation paragraph.";
+}
+
+@section topcssandjs{
+
+}
+
+@section bottomcssandjs {
+    <style class="cp-pen-styles">
+        .field-wrapper {
+            position: relative;
+            margin-bottom: 12px;
+        }
+
+        label {
+            position: absolute;
+            top: -13px;
+            left: 0;
+            font-size: 11px;
+            color: #aaa;
+            transition: all 0.1s linear;
+            opacity: 0;
+            font-weight: bold;
+        }
+
+            label.on {
+                color: #4481C4;
+            }
+
+            label.show {
+                top: -9px;
+                opacity: 1;
+                font-weight: 600;
+                background-color: #FFF;
+                padding: 1px 5px 0px 5px;
+                margin-left: 6px;
+                color: #000;
+            }
+
+        option {
+            color: black;
+        }
+
+        /*.watermark {
+            color: #aaa;
+        }
+
+        body {
+            padding: 20px;
+            / * the following line fixes a blink in chrome https://code.google.com/p/chromium/issues/detail?id=108025 * /
+            -webkit-backface-visibility: hidden;
+        }
+        */
+    </style>
+}
+
+@section pageHeader {
+    @* XxXxXxXxXxXxXxXxXxXxX NOT REQUIRED XxXxXxXxXxXxXxXxXxXxX *@
+    @ViewBag.PageHeader
+}
+@section pageSubheader {
+    @* XxXxXxXxXxXxXxXxXxXxX NOT REQUIRED XxXxXxXxXxXxXxXxXxXxX *@
+    @ViewBag.PageSubHeader
+}
+@section xtitle{
+    @* REQUIRED IF panelName CONTAIN A NAME AND DESCRIPTION *@
+    x_title
+}
+@section panelName {
+    @* PANEL NAME REQUIRED *@
+    @ViewBag.PanelName
+}
+@section explanationParagraph {
+    @* XxXxXxXxXxXxXxXxXxXxX NOT REQUIRED XxXxXxXxXxXxXxXxXxXxX *@
+    @ViewBag.PanelNameExplanation
+}
+
+<div class="row">
+    <div class="clearfix"></div>
+    <form id="EditPassword" method="post" action="/Partner/Reports/Commissions">
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            @*4 COLUMNS*@
+            <div class="x_panel">
+                <div class="x_title">
+                    <h2 class="hidden-sm hidden-xs strong"><i class="fa fa-link padding-right-five-px hidden-sm hidden-xs"></i>Quick Links</h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                        <li>
+                            <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                        </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                    <h3 class="">Reports</h3>
+                    <hr class="horizontal-divider-gray">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <ul>
+                        <li class="color-red">Some important message here.</li>
+                    </ul>
+                    <hr class="horizontal-divider-gray">
+                </div>
+            </div>
+
+
+            <div class="x_panel">
+                <div class="x_title">
+                    <h2 class="hidden-sm hidden-xs strong"><i class="fa fa-user padding-right-five-px hidden-sm hidden-xs"></i>My Account</h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                        <li>
+                            <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                        </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">Account Type:</div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 align-text-right">ProPay Premium +</div>
+                    <div class="row clearfix"></div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">Account Number:</div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 align-text-right">1060490</div>
+                    <div class="row clearfix"></div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">Distributor ID:</div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 align-text-right">RS1014</div>
+                    <div class="row clearfix"></div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">Exp. Date</div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 align-text-right">4/6/2018</div>
+                    <div class="row clearfix"></div>
+                    @*<h3 class="">Reports</h3>
+        <hr class="horizontal-divider-gray">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <ul>
+            <li class="color-red">Some important message here.</li>
+        </ul>
+        <hr class="horizontal-divider-gray">*@
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            @*4 COLUMNS*@
+            <div class="x_panel">
+                <div class="x_title">
+                    <h2 class="hidden-sm hidden-xs strong"><i class="fa fa-usd padding-right-five-px hidden-sm hidden-xs"></i>Take a Payment</h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                        <li>
+                            <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                        </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                    <h3 class="fw6 strong">REQUIRED Card Information</h3>
+                    <hr />
+                    <div class="row clearfix padding-top-five-px"></div>
+                    <div class="col-xs-12 col-sm-12 col-md-12 no-padding">
+                        <div class="field-wrapper">
+                            <label for="cardnumber">Customer's Card Number</label>
+                            <input name="cardnumber" class="form-control align-text-center" style="font-size: 18px;" maxlength="19" placeholder="Customer's Card Number" />
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12 no-padding" style="margin:0 0 -9px 0;">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 align-text-right">
+                            <div class="padding-top-eight-px">Exp. Date:</div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 no-padding">
+                            <ul class="list-inline list-unstyled">
+                                <li class="no-padding">
+                                    <div class="field-wrapper">
+                                        <label for="month">month</label>
+                                        <input name="month" class="form-control" placeholder="mm" maxlength="2" style="width:55px;" />
+                                    </div>
+                                </li>
+                                <li class="no-padding">/</li>
+                                <li class="no-padding">
+                                    <div class="field-wrapper">
+                                        <label for="year">year</label>
+                                        <input name="year" class="form-control" placeholder="yy" maxlength="2" style="width:45px;" />
+                                    </div>
+                                </li>
+                                <li class="no-padding"><a href="#" title="What is this?"><i class="fa fa-question-circle color-red"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12 no-padding" style="margin:0 0 -9px 0;">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 align-text-right">
+                            <div class="padding-top-eight-px">CVV2/CID:</div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 no-padding">
+                            <ul class="list-inline list-unstyled">
+                                <li class="no-padding">
+                                    <div class="field-wrapper">
+                                        <label for="cid">CID</label>
+                                        <input name="cid" class="form-control" placeholder="" maxlength="3" style="width:50px;" />
+                                    </div>
+                                </li>
+                                <li class="no-padding"><a href="#" title="What is this?"><i class="fa fa-question-circle color-red"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-12 col-md-12 no-padding" style="margin:0 0 -9px 0;">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 align-text-right">
+                            <div class="padding-top-eight-px">ZIP/Postal Code:</div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 no-padding">
+                            <ul class="list-inline list-unstyled">
+                                <li class="no-padding">
+                                    <div class="field-wrapper">
+                                        <label for="zip">ZIP</label>
+                                        <input name="zip" class="form-control" placeholder="" maxlength="5" style="width:65px; text-align: left;" />
+                                    </div>
+                                </li>
+                                <li class="no-padding"><a href="#" title="What is this?"><i class="fa fa-question-circle color-red"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-12 col-md-12 no-padding" style="margin:0 0 -9px 0;">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 align-text-right">
+                            <div class="padding-top-eight-px">Amount: $</div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 no-padding">
+                            <ul class="list-inline list-unstyled">
+                                <li class="no-padding">
+                                    <div class="field-wrapper">
+                                        <label for="amount">Amount</label>
+                                        <input name="amount" class="form-control" placeholder="0,000.00" maxlength="8" style="width:85px; text-align: left;" />
+                                    </div>
+                                </li>
+                                @*<li class="no-padding"><a href="#" title="What is this?"><i class="fa fa-question-circle color-red"></i></a></li>*@
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <hr />
+                </div>
+                <div class="x_content">
+                    <h3>RECOMMENDED Card Information</h3>
+                    <div class="row clearfix padding-top-five-px"></div>
+                    <div class="col-xs-12 col-sm-12 col-md-12 no-padding">
+                        <div class="field-wrapper">
+                            <label for="fullname">Name (as it appears on card)</label>
+                            <input name="fullname" class="form-control" placeholder="Name (as it appears on card)" />
+                        </div>
+                        <div class="field-wrapper">
+                            <label for="address1">Address 1</label>
+                            <input name="address1" class="form-control" placeholder="Address 1" />
+                        </div>
+                        <div class="field-wrapper">
+                            <label for="address2">Address 2</label>
+                            <input name="address2" class="form-control" placeholder="Address 2" />
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12 no-padding">
+                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 no-padding">
+                            <div class="field-wrapper">
+                                <label for="city">City</label>
+                                <input name="city" class="form-control" placeholder="City" />
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 no-padding">
+                            <div class="field-wrapper">
+                                <label for="state">State</label>
+                                <select name="State" class="form-control" placeholder="State">
+                                    <option value="" selected="selected">State</option>
+                                    <option value="AL">AL</option>
+                                    <option value="AK">AK</option>
+                                    <option value="AZ">AZ</option>
+                                    <option value="AR">AR</option>
+                                    <option value="CA">CA</option>
+                                    <option value="CO">CO</option>
+                                    <option value="CT">CT</option>
+                                    <option value="DE">DE</option>
+                                    <option value="DC">DC</option>
+                                    <option value="FL">FL</option>
+                                    <option value="GA">GA</option>
+                                    <option value="HI">HI</option>
+                                    <option value="ID">ID</option>
+                                    <option value="IL">IL</option>
+                                    <option value="IN">IN</option>
+                                    <option value="IA">IA</option>
+                                    <option value="KS">KS</option>
+                                    <option value="KY">KY</option>
+                                    <option value="LA">LA</option>
+                                    <option value="ME">ME</option>
+                                    <option value="MD">MD</option>
+                                    <option value="MA">MA</option>
+                                    <option value="MI">MI</option>
+                                    <option value="MN">MN</option>
+                                    <option value="MS">MS</option>
+                                    <option value="MO">MO</option>
+                                    <option value="MT">MT</option>
+                                    <option value="NE">NE</option>
+                                    <option value="NV">NV</option>
+                                    <option value="NH">NH</option>
+                                    <option value="NJ">NJ</option>
+                                    <option value="NM">NM</option>
+                                    <option value="NY">NY</option>
+                                    <option value="NC">NC</option>
+                                    <option value="ND">ND</option>
+                                    <option value="OH">OH</option>
+                                    <option value="OK">OK</option>
+                                    <option value="OR">OR</option>
+                                    <option value="PA">PA</option>
+                                    <option value="RI">RI</option>
+                                    <option value="SC">SC</option>
+                                    <option value="SD">SD</option>
+                                    <option value="TN">TN</option>
+                                    <option value="TX">TX</option>
+                                    <option value="UT">UT</option>
+                                    <option value="VT">VT</option>
+                                    <option value="VA">VA</option>
+                                    <option value="WA">WA</option>
+                                    <option value="WV">WV</option>
+                                    <option value="WI">WI</option>
+                                    <option value="WY">WY</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12 no-padding">
+                        <div class="field-wrapper">
+                            <label for="invoice">Invoice Number</label>
+                            <input name="invoice" class="form-control" placeholder="Invoice Number" />
+                        </div>
+                        <div class="field-wrapper">
+                            <label for="recipientemail">Email address for Receipt</label>
+                            <input name="recipientemail" class="form-control" placeholder="Recipient's Email" />
+                        </div>
+                        <div class="field-wrapper">
+                            <label for="recipientnote">Recipient's Note</label>
+                            <input name="recipientnote" class="form-control" placeholder="Personal note for Recipient" />
+                        </div>
+                    </div>
+                    <div class="row clearfix padding-top-five-px"></div>
+                    <hr />
+                    <div class="row clearfix padding-top-five-px align-text-right">
+                        <button type="submit" class="btn btn-success btn-sm"><i class="fa fa-check padding-right-five-px"></i>CONTINUE</button>
+                        <button type="reset" class="btn btn-danger btn-sm"><i class="fa fa-times padding-left-and-right-five-px"></i>Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            @*4 COLUMNS*@
+            <div class="x_panel">
+                <div class="x_title">
+                    <h2 class="hidden-sm hidden-xs"><i class="fa fa-wrench padding-right-five-px hidden-sm hidden-xs"></i>Complete Account Setup</h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                        <li>
+                            <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                        </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                    <ul class="list-unstyled">
+                        <li class="padding-top-and-bottom-two-px"><a href="#" title="TEXT"><i class="fa fa-plus-circle padding-right-eight-px"></i>Add Bank Account</a></li>
+                        <li class="padding-top-and-bottom-two-px"><a href="#" title="TEXT"><i class="fa fa-comments padding-right-eight-px"></i>Marketing Options</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="x_panel">
+                <div class="x_title">
+                    <h2 class="hidden-sm hidden-xs"><i class="fa fa-users padding-right-five-px hidden-sm hidden-xs"></i>Customer Service</h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                        <li>
+                            <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                        </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                    <ul class="list-unstyled">
+                        <li class="padding-top-and-bottom-two-px"><a href="#" title="TEXT"><i class="fa fa-chevron-right padding-right-ten-px" style="font-size:9px;"></i>About ProPay</a></li>
+                        <li class="padding-top-and-bottom-two-px"><a href="#" title="TEXT"><i class="fa fa-chevron-right padding-right-ten-px" style="font-size:9px;"></i>Frequent Asked Questions</a></li>
+                        <li class="padding-top-and-bottom-two-px"><a href="#" title="TEXT"><i class="fa fa-chevron-right padding-right-ten-px" style="font-size:9px;"></i>Contact Us</a></li>
+                        <li class="padding-top-and-bottom-two-px"><a href="#" title="TEXT"><i class="fa fa-chevron-right padding-right-ten-px" style="font-size:9px;"></i>Mobile Applications</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="x_panel">
+                <div class="row"><img class="img-responsive no-padding;" src="http://via.placeholder.com/900x300?text=900x300" title="Main advertising banner" /></div>
+                <div class="row">
+                    <div class="padding-top-five-px"></div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 no-padding"><img class="img-responsive" src="http://via.placeholder.com/900x300?text=900x300" title="Left Small Banner" /></div>
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 no-padding">
+                        <div class="padding-top-five-px hidden-lg hidden-md"></div><img class="img-responsive" src="http://via.placeholder.com/900x300?text=900x300" title="Right Small Banner" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix pt15"></div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            @*12 COLUMNS*@
+            <div class="x_panel">
+                <div class="x_title">
+                    <h2 class="hidden-sm hidden-xs strong"><i class="fa fa-question-circle padding-right-five-px hidden-sm hidden-xs"></i>Full Column</h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                        <li>
+                            <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                        </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                    <h4 class="align-text-center">Centered explanation header here</h4>
+                    <hr class="horizontal-divider-gray">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <ul>
+                        <li class="color-red">Some important message here.</li>
+                    </ul>
+                    <hr class="horizontal-divider-gray">
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            @*6 COLUMNS*@
+            <div class="x_panel">
+                <div class="x_title">
+                    <h2 class="hidden-sm hidden-xs strong"><i class="fa fa-question-circle padding-right-five-px hidden-sm hidden-xs"></i>Left Column</h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                        <li>
+                            <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                        </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                    <h4 class="align-text-center">Centered explanation header here</h4>
+                    <hr class="horizontal-divider-gray">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <ul>
+                        <li class="color-red">Some important message here.</li>
+                    </ul>
+                    <hr class="horizontal-divider-gray">
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            @*6 COLUMNS*@
+            <div class="x_panel">
+                <div class="x_title">
+                    <h2 class="hidden-sm hidden-xs strong"><i class="fa fa-question-circle padding-right-five-px hidden-sm hidden-xs"></i>Right Column</h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                        <li>
+                            <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                        </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                    <h4 class="align-text-center">Centered explanation header here</h4>
+                    <hr class="horizontal-divider-gray">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <ul>
+                        <li class="color-red">Some important message here.</li>
+                    </ul>
+                    <hr class="horizontal-divider-gray">
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            @*4 COLUMNS*@
+            <div class="x_panel">
+                <div class="x_title">
+                    <h2 class="hidden-sm hidden-xs strong"><i class="fa fa-question-circle padding-right-five-px hidden-sm hidden-xs"></i>Left Column</h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                        <li>
+                            <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                        </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                    <h4 class="align-text-center">Centered explanation header here</h4>
+                    <hr class="horizontal-divider-gray">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <ul>
+                        <li class="color-red">Some important message here.</li>
+                    </ul>
+                    <hr class="horizontal-divider-gray">
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            @*4 COLUMNS*@
+            <div class="x_panel">
+                <div class="x_title">
+                    <h2 class="hidden-sm hidden-xs strong"><i class="fa fa-question-circle padding-right-five-px hidden-sm hidden-xs"></i>Center Column</h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                        <li>
+                            <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                        </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                    <h4 class="align-text-center">Centered explanation header here</h4>
+                    <hr class="horizontal-divider-gray">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <ul>
+                        <li class="color-red">Some important message here.</li>
+                    </ul>
+                    <hr class="horizontal-divider-gray">
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            @*4 COLUMNS*@
+            <div class="x_panel">
+                <div class="x_title">
+                    <h2 class="hidden-sm hidden-xs strong"><i class="fa fa-question-circle padding-right-five-px hidden-sm hidden-xs"></i>Right Column</h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                        <li>
+                            <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                        </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                    <h4 class="align-text-center">Centered explanation header here</h4>
+
+                    <hr class="horizontal-divider-gray">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <ul>
+                        <li class="color-red">Some important message here.</li>
+                    </ul>
+                    <hr class="horizontal-divider-gray">
+                </div>
+            </div>
+        </div>
+        <div class="clearfix pt15"></div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            @*12 COLUMNS*@
+            <div class="x_panel">
+                <div class="x_title">
+                    <h2 class="hidden-sm hidden-xs strong"><i class="fa fa-question-circle padding-right-five-px hidden-sm hidden-xs"></i>Full Column</h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                        <li>
+                            <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                        </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                    <div class="container">
+                        <div class="row border-red">
+                            <div class="clearfix" style="padding-top:10px !important; padding-bottom:10px !important;"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6 col-md-6">
+                                <div class="field-wrapper">
+                                    <label for="fname">First Name</label>
+                                    <input name="fname" class="form-control" placeholder="First Name" />
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-6">
+                                <div class="field-wrapper">
+                                    <label for="lname">Last Name</label>
+                                    <input name="lname" class="form-control" placeholder="Last Name" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <div class="field-wrapper">
+                                    <div class="input-group">
+                                        <span class="input-group-addon" id="basic-addon1">@@</span>
+                                        <label for="usercity">City</label>
+                                        <input name="usercity" type="text" class="form-control" placeholder="User City" aria-describedby="City">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="field-wrapper">
+                            <label for="state">State</label>
+                            <select name="State" class="form-control" placeholder="State">
+                                <option value="" selected="selected">State</option>
+                                <option value="AL">Alabama</option>
+                                <option value="AK">Alaska</option>
+                                <option value="AZ">Arizona</option>
+                                <option value="AR">Arkansas</option>
+                                <option value="CA">California</option>
+                                <option value="CO">Colorado</option>
+                                <option value="CT">Connecticut</option>
+                                <option value="DE">Delaware</option>
+                                <option value="DC">District Of Columbia</option>
+                                <option value="FL">Florida</option>
+                                <option value="GA">Georgia</option>
+                                <option value="HI">Hawaii</option>
+                                <option value="ID">Idaho</option>
+                                <option value="IL">Illinois</option>
+                                <option value="IN">Indiana</option>
+                                <option value="IA">Iowa</option>
+                                <option value="KS">Kansas</option>
+                                <option value="KY">Kentucky</option>
+                                <option value="LA">Louisiana</option>
+                                <option value="ME">Maine</option>
+                                <option value="MD">Maryland</option>
+                                <option value="MA">Massachusetts</option>
+                                <option value="MI">Michigan</option>
+                                <option value="MN">Minnesota</option>
+                                <option value="MS">Mississippi</option>
+                                <option value="MO">Missouri</option>
+                                <option value="MT">Montana</option>
+                                <option value="NE">Nebraska</option>
+                                <option value="NV">Nevada</option>
+                                <option value="NH">New Hampshire</option>
+                                <option value="NJ">New Jersey</option>
+                                <option value="NM">New Mexico</option>
+                                <option value="NY">New York</option>
+                                <option value="NC">North Carolina</option>
+                                <option value="ND">North Dakota</option>
+                                <option value="OH">Ohio</option>
+                                <option value="OK">Oklahoma</option>
+                                <option value="OR">Oregon</option>
+                                <option value="PA">Pennsylvania</option>
+                                <option value="RI">Rhode Island</option>
+                                <option value="SC">South Carolina</option>
+                                <option value="SD">South Dakota</option>
+                                <option value="TN">Tennessee</option>
+                                <option value="TX">Texas</option>
+                                <option value="UT">Utah</option>
+                                <option value="VT">Vermont</option>
+                                <option value="VA">Virginia</option>
+                                <option value="WA">Washington</option>
+                                <option value="WV">West Virginia</option>
+                                <option value="WI">Wisconsin</option>
+                                <option value="WY">Wyoming</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    @*<h4>Centered explanation header here</h4>
+                        <hr class="horizontal-divider-gray">*@
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <ul>
+                        <li class="color-red">Some important message here.</li>
+                    </ul>
+                    <hr class="horizontal-divider-gray">
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <span class="help-block"></span>
+        <hr class="horizontal-divider-gray">
+        <span class="help-block"></span>
+        <div class="clearfix pt15"></div>
+        <div class="form-group">
+            <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+                <button id="CommissionsReportBtn" type="submit" class="btn btn-success"><i class="fa fa-usd padding-right-five-px"></i>Re-run Report</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+@section scripts {
+    <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script>
+        $(function () {
+            var onClass = "on";
+            var showClass = "show";
+
+            $("input, select")
+                .bind("checkval", function () {
+                    var label = $(this).prev("label");
+
+                    if (this.value !== "")
+                        label.addClass(showClass);
+
+                    else
+                        label.removeClass(showClass);
+                })
+                .on("keyup", function () {
+                    $(this).trigger("checkval");
+                })
+                .on("focus", function () {
+                    $(this).prev("label").addClass(onClass);
+                })
+                .on("blur", function () {
+                    $(this).prev("label").removeClass(onClass);
+                })
+                .trigger("checkval");
+
+            $("select")
+                .on("change", function () {
+                    var $this = $(this);
+
+                    if ($this.val() == "")
+                        $this.addClass("watermark");
+
+                    else
+                        $this.removeClass("watermark");
+
+                    $this.trigger("checkval");
+                })
+                .change();
+        });
+                                                                                            //# sourceURL=pen.js
+    </script>
+}
+
+@section pagerequiredscript {
+}

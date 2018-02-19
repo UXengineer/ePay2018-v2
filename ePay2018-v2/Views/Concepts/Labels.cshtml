@@ -1,0 +1,118 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Labels</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    @*<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>*@
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <style class="cp-pen-styles">
+        .form-group {
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-control-placeholder {
+            position: absolute;
+            top: 0;
+            padding: 7px 0 0 13px;
+            transition: all 200ms;
+            opacity: 0.5;
+        }
+
+        .form-control:focus + .form-control-placeholder,
+        .form-control:valid + .form-control-placeholder {
+            font-size: 75%;
+            transform: translate3d(0, -100%, 0);
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <h1 class="page-header">Labels</h1>
+
+        <div class="container my-5">
+            <div class="row">
+                <div class="col-md-6 mx-auto">
+                    <div class="form-group">
+                        <input type="text" id="name" class="form-control" required>
+                        <label class="form-control-placeholder" for="name">Name</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="password" class="form-control" required>
+                        <label class="form-control-placeholder" for="password">Password</label>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-control-placeholder" for="selectoptions">Select Options</label>
+                        <select id="selectoptions" class="form-control" name="ddl" required>
+                            <option value="" selected></option>
+                            <option value="option1">Option 1</option>
+                            <option value="option2">Option 2</option>
+                            <option value="optiond">Option 3</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--<form class="card card-block bg-faded">
+            <legend class="m-b-1 text-xs-center">Sign up</legend>
+
+            <div class="form-group input-group">
+                <span class="has-float-label">
+                    <input class="form-control" id="first" type="text" placeholder="Name" />
+                    <label for="first">First</label>
+                </span>
+                <label class="has-float-label">
+                    <input class="form-control" type="text" placeholder="Surname" />
+                    <span>Last</span>
+                </label>
+            </div>
+
+            <div class="form-group input-group">
+                <span class="input-group-addon"><i class="bg-faded fa-envelope"></i></span>
+                <label class="has-float-label">
+                    <input class="form-control" type="email" placeholder="email@example.com" value="email@example.com" />
+                    <span>Email</span>
+                </label>
+            </div>
+
+            <div class="form-group has-float-label">
+                <input class="form-control" id="password" type="password" placeholder="••••••••" />
+                <label for="password">Password</label>
+            </div>
+
+            <label class="form-group has-float-label">
+                <select class="form-control custom-select">
+                    <option selected>United States</option>
+                    <option>Canada</option>
+                    <option>...</option>
+                </select>
+                <span>Country</span>
+            </label>
+
+            <div class="form-group">
+                <label class="custom-control custom-checkbox">
+                    <input class="custom-control-input" type="checkbox" />
+                    <span class="custom-control-indicator"></span>
+                    <span class="custom-control-description">Subscribe to newsletter</span>
+                </label>
+            </div>
+
+            <button class="btn btn-block btn-primary" type="submit">Sign up</button>
+        </form>
+        -->
+
+    </div>
+</body>
+</html>
